@@ -422,8 +422,8 @@ void main() {
 
       // Expect a form group created
       expect(
-        form.control('control') is FormControl<DateTime>,
-        true,
+        form.control('control'),
+        isA<FormControl<DateTime>>(),
         reason:
         '${form.control('control').runtimeType} is not instance of FormControl<DateTime>',
       );
@@ -433,13 +433,8 @@ void main() {
         reason: 'control default value not set',
       );
       expect(
-          form.control('control').validators.length,
-          1,
-          reason: 'incorrect validators length'
-      );
-      expect(
-        form.control('control').validators[0],
-        requiredValidator,
+        form.control('control').validators,
+        [requiredValidator],
         reason: 'not set required validator'
       );
     });
@@ -477,8 +472,8 @@ void main() {
 
       // Expect a form group created
       expect(
-        form.control('control') is FormControl<TimeOfDay>,
-        true,
+        form.control('control'),
+        isA<FormControl<TimeOfDay>>(),
         reason:
         '${form.control('control').runtimeType} is not instance of FormControl<TimeOfDay>',
       );
@@ -488,13 +483,8 @@ void main() {
         reason: 'control default value not set',
       );
       expect(
-          form.control('control').validators.length,
-          1,
-          reason: 'incorrect validators length'
-      );
-      expect(
-          form.control('control').validators[0],
-          requiredValidator,
+          form.control('control').validators,
+          [requiredValidator],
           reason: 'not set required validator'
       );
     });
